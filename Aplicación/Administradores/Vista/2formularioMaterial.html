@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="JS/formMaterial.js"></script>
+    <script defer src="JS/validacionAdmin.js"></script>
+    <title>Formulario Material</title>
+</head>
+<body onload = "sesionIniciada();">
+    <header>
+        <form action="" method="post" id="formLogout">
+            <div class="col-md-12" >
+                <input type="button" id="login" value="Salir" 
+                class="btn btn-outline-danger" onclick="cerrarSesion();">
+                <a href="indexAdmin.html">
+                    <input type="button" id="return" value="Regresar" 
+                    class="btn btn-outline-success">
+                </a>
+            </div>
+        </form>
+        <h1 style="text-align: center;">Dar de alta un Material</h1>
+    </header>
+    <br>
+    <div>
+        <form action="" method="post" id="formMaterial">
+            <div class="container">
+                <div class="row align-items-start">              
+                    <div class="col-md-6 offset-md-3">
+                        <h4>Nombre material</h4>
+                        <input type="text" name="nombre" id="nombre" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start"> 
+                    <div class="col-md-6 offset-md-3">
+                        <h4>URL del material</h4>
+                        <input type="text" name="url" id="url" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start"> 
+                    <div class="col-md-6 offset-md-3">
+                        <h4>Tipo de material</h4>
+                        <select name="tipoM" id="tipoM" class="tipoM form-control"></select>
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start"> 
+                    <div class="col-md-6 offset-md-3">
+                        <h4>Fecha de Publicación</h4>
+                        <input type="date" name="fecha" id="fecha" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start"> 
+                    <div class="col-md-6 offset-md-3">
+                        <h4>Materia a la que pertenece</h4>
+                        <select name="materias" id="materias" class="materias form-control"></select>
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start"> 
+                    <div class="col-md-6 offset-md-3">
+                        <h4>Temas al que pertenece</h4>
+                        <select multiple name="temas[]" id="temas" class="temas form-control"></select>
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start"> 
+                    <div class="col-md-6 offset-md-3">
+                        <h4>Autores</h4>
+                        <select multiple name="autores[]" id="autores" class="autores form-control"></select>
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start"> 
+                    <div class="col-md-6 offset-md-3">
+                        <h4>Palabras Clave con que se relaciona</h4>
+                        <select multiple name="palabrasClave[]" id="palabrasClave" class="palabrasClave form-control"></select>
+                    </div>
+                </div>
+                <br>
+                <div class="row align-items-start">
+                    <div class="col-md-6 offset-md-3">
+                        <input type="button" id="login" value="Dar de Alta" 
+                        class="btn btn-outline-success" onclick="validarForm();">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

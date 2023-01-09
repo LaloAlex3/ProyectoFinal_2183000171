@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script defer src="JS/validacionAdmin.js"></script>
+    <title>AZC ME! UAM</title>
+
+</head>
+<body>
+    <header >
+        <div class="col-md-12" style ="align-content: center;">
+            <a href="../../UsuarioFinal/index.html">
+                <input type="button" id="login" value="Pagina Principal" 
+                class="btn btn-outline-success">
+            </a>
+            <h1>Bienvenido Administrador</h1>
+        </div>
+    </header>
+    <form action="" method="POST" id="formLogin" onsubmit="validarFormulario(); ">
+        <div class="error-mensaje"></div>
+        <div class="col-md-6">
+          <h4>Usuario</h4>
+          <input name="usuario_nombre" type="text"  class="form-control" id="username">
+        </div>
+        <div class="col-md-6">
+            <h4>Ingrese Contraseña</h4>
+            <div class="input-group">
+                <input id="txtPassword" name="contra" type="Password" Class="form-control" maxlength="16">
+                <div class="input-group-append">
+                    <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-6">
+            <input type="submit" id="sumbmit" onclick="validarFormulario();"style="display: none;">
+            <input type="button" id="login" value="Iniciar Sesión"
+                  class="btn btn-primary" onclick="validarFormulario();">
+          </div>
+    </form>
+</body>
+</html>

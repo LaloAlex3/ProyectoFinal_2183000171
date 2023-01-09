@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="JS/formUEA.js"></script>
+    <script defer src="JS/validacionAdmin.js"></script>
+    <title>Formulario UEA</title>
+</head>
+<body onload="sesionIniciada();">
+    <header>
+        <form action="" method="post" id="formLogout">
+            <div class="col-md-12" >
+                <input type="button" id="login" value="Salir" 
+                class="btn btn-outline-danger" onclick="cerrarSesion();">
+                <a href="indexAdmin.html">
+                    <input type="button" id="return" value="Regresar" 
+                    class="btn btn-outline-success">
+                </a>
+            </div>
+        </form>
+        <h1 style="text-align: center;">Ingrese los datos de la Unidad de Enseñanza y Aprendizaje</h1>
+    </header>
+    <br>
+    <div>
+        <form action="" method="post" id="formUEA">
+            <div class="container">
+                <div class="row align-items-start">              
+                    <div class="col-6">
+                        <h4>Nombre de la UEA </h4>
+                        <input type="text" name="nombre" id="nombre" class="form-control">
+                    </div>
+                    <div class="col-2">
+                        <h4>Clave de la UEA</h4>
+                        <input type="number" name="clave" id="clave" class="form-control" min="1">
+                    </div>
+                    <br>
+                    <div class="col-md-4">
+                        <h4>Descripción de la UEA</h4>
+                        <textarea name="descrip" id="descrip" cols="50" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Nombre del Temario</h4>
+                        <input type="text" name="nombreTemario" id="nombreTemario" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Temas</h4>
+                        <div id="arrTemas" name="arrTemas">
+
+                        </div>
+                        <input type="button" class="btn btn-success" id="masTemas" onclick="agregarTema();" value="Agregar Tema">
+                    </div>
+                    <br>
+                    <div class="col align-self-end col-auto ">
+                        <input type="button" id="login" value="Dar de Alta" 
+                        class="btn btn-outline-success" onclick="validarForm();">
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <h3>UEA's almacenadas</h3>
+        <br>
+        <div class="container " name="tabla" >
+            <div class="row align-items-start text-center table-success border" > 
+                <div class="col-md-0 ">
+                    <h4>ID</h4>
+                </div>
+                <div class="col-md-1  ">
+                    <h4>Nombre </h4>
+                </div>
+                <div class="col-md-1  ">
+                    <h4>Clave</h4>
+                </div>
+                <div class="col-md-7 ">
+                    <h4>Descripcion</h4>
+                </div>
+                <div class="col-md-2  ">
+                    <h4>Temario</h4>
+                </div>
+            </div>
+            <div id="registros" name="registros"></div>
+        </div>
+    </div>
+
+</body>
+</html>
